@@ -1351,6 +1351,7 @@ class _AppMixIn:
             RuntimeError
         """
         target = "/data/local/tmp/_tmp.apk"
+        self.shell(['rm', target])
         self.push(data, target, show_progress=True)
         logger.debug("pm install -r -d -t %s", target)
         ret = self.shell(['pm', 'install', "-r", "-d", "-t", target], timeout=300)
