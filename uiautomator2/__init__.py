@@ -1892,7 +1892,7 @@ def connect(addr=None) -> Device:
     wifi_addr = _fix_wifi_addr(addr)
     if wifi_addr:
         return connect_wifi(addr)
-    return connect_usb(addr)
+    return connect_adb_wifi(addr)
 
 
 def connect_adb_wifi(addr) -> Device:
